@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        #factContainer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 80%;
+        }
+
+        #fact {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #generateFact {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #generateFact:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="factContainer">
+        <div id="fact">Click the button to generate a random fact!</div>
+        <button id="generateFact">Get a Random Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Bananas are berries, but strawberries aren't.",
+            "Wombat poop is cube-shaped.",
+            "The Eiffel Tower can be 15 cm taller during the summer due to the expansion of iron in the heat.",
+            "Octopuses have three hearts and blue blood.",
+            "A day on Venus is longer than a year on Venus.",
+            "Some turtles can breathe through their butts.",
+            "Humans share 60% of their DNA with bananas.",
+            "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const button = document.getElementById('generateFact');
+
+        button.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factElement.textContent = facts[randomIndex];
+        });
+    </script>
+
+</body>
+</html>
